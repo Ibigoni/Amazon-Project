@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lesson 9 Exercises</title>
+  </head>
+  <body> 
+    <!--<button>9a</button>
+    <button class="js-change-button">9b</button>
+    
+    <button onclick="
+    buttonElement = 'heads';
+    //document.querySelector('.js-result')
+    //.innerHTML = 
+    updateText(buttonElement);
+    ;
+    " class="js-heads">heads</button>
+    <button onclick="
+    buttonElement = 'tails';
+    //document.querySelector('.js-result')
+    //.innerHTML = 
+    updateText(buttonElement);
+    ;
+    " class="js-tails">tails</button>
+
+    <p class="js-result"></p> -->
+
+    <input placeholder="Name" class="js-name-box" onkeydown="
+    updateOnKeyPress(event);
+    ">
+    <button onclick="
+    displayName();
+    ">Submit</button>
+    <p class="js-display-name"></p>
+
+    
+    <script>
+      /*
+      //console.log(document.querySelector('button'));
+      //console.log(document.querySelector('.js-change-button').innerHTML = '9b done!');  
+      let message = ''
+
+      function updateText(buttonElement) {
+      if (buttonElement === 'heads') {
+        message =  `You chose: ${buttonElement}`
+      } else if (buttonElement === 'tails') {
+        message = `You chose: ${buttonElement}`
+      }
+
+      document.querySelector('.js-result').innerHTML = message;
+    }
+      */
+     
+    function updateOnKeyPress(event) {
+      if (event.key === 'Enter') {
+        displayName();
+      }
+    }
+
+    function displayName() {
+     const inputTextBox= document.querySelector('.js-name-box');
+     let text = inputTextBox.value
+     let message = ''
+
+     if(text) {
+      message = `Your name is: ${text}`
+     } else {
+      message = 'Type in your name'
+     }
+
+     document.querySelector('.js-display-name').innerHTML = message
+
+    }
+
+    </script>
+  </body>
+</html>
+
+
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise</title>
+  </head>
+  <body> 
+    <h1>Welcome to My Restaurant</h1>
+    
+    <button onClick="
+      console.log(`Items: ${item}`);
+    ">Show Items</button>
+    
+    <button onClick="
+      console.log(`Total: $${cost * (1 + tax)}`);
+      console.log('10% tax was added to the total.')
+    ">Total</button>
+    
+    <button onClick="
+      item ++;
+      cost += 5;
+      console.log('Added coffee for $5');
+    ">coffee</button>
+    
+    <button onClick="
+      item ++;
+      cost += 3;
+      console.log('Added coffee for $3');
+    ">bagel</button>
+    
+    <button onClick="
+      item ++;
+      cost += 9;
+      console.log('Added coffee for $9');
+    ">soup</button>
+
+  
+    
+    <button onClick="
+    item = 0;
+    cost = 0;
+    console.log('Cart was reset.');
+    console.log(`Items: ${item}`);
+    console.log(`Total: $${cost}`);
+    ">Reset</button>
+
+
+
+
+   
+    <script>
+      const name = 'Ibigoni Inye-Tam';
+      console.log(`My name is: ${name}`);
+      alert('Welcome To My Restaurant');
+      let cost = 0;
+      let item = 0;
+      const tax = 0.1;
+    </script>
+  </body>
+</html>
+
+
+

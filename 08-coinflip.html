@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lesson 6 Exercises</title>
+  </head>
+  <body> 
+    <button title="heads" onClick=" 
+    guess = 'heads';
+    playGame(guess);
+    
+    ">heads</button>
+
+    <button title="tails" onClick="
+    guess = 'tails';
+    playGame(guess);
+    
+    ">tails</button>
+
+    <button title="reset game" onClick="
+    score.wins = 0;
+    score.losses = 0;
+    localStorage.removeItem('score');
+  
+    ">Reset</button>
+
+    <script>
+
+      let score = JSON.parse(localStorage.getItem('score')) || {
+        wins: 0,
+        losses: 0
+      };
+      
+      function playGame(guess) {
+
+        const randomNumber = Math.random();
+        
+        const result = randomNumber < 0.5 ? 'heads' : 'tails';
+        console.log(result);
+  
+        //const randomGuess = Math.random();
+  
+        //const guess = randomGuess < 0.5 ? 'heads' : 'tails';
+        //console.log(guess);
+        
+        const answer = guess === result ? 'You win!' : 'You lose!';
+        console.log(answer);
+
+        //const score = {
+        //  wins: 0,
+        //  losses: 0
+       // };
+        
+        if(answer === 'You win!') {
+          score.wins += 1;
+        } else {
+          score.losses += 1;
+        }
+
+        localStorage.setItem('score', JSON.stringify(score));
+
+
+        console.log(`Wins: ${score.wins} Losses: ${score.losses} `);
+      };
+
+    
+
+      
+      /*
+      if (randomNumber < 0.5 ) {
+        result = 'heads'
+        console.log(result);
+      } else {
+        result = 'tails'
+        console.log(result);
+      }
+      */
+      
+      /*
+      if (randomGuess < 0.5 ) {
+        guess = 'heads'
+        console.log(guess);
+      } else {
+        guess = 'tails'
+        console.log(guess);
+      }
+
+      if (guess === result) {
+        console.log('You win!');
+      } else {
+        console.log('You lose!');
+      }
+      */
+
+
+
+    </script>
+  </body>
+</html>
+
+
+
+
+

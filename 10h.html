@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM Projects</title>
+    <!--Space on the inside of an element is called 'padding'
+    Space on the outside of an element is called 'margin'-->
+    <style>
+      body {
+        font-family: Arial;
+      }
+
+      .subscribe-button {
+        border: none;
+        background-color: black;
+        color: white;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-weight: bold;
+        border-radius: 50px;
+        cursor: pointer;
+        margin-bottom: 30px;
+      }
+
+
+      .is-subscribed {
+        background-color:  rgb(240, 240, 240);
+        color: black;
+      }
+
+      .cost-input {
+        font-size: 15px;
+        /*
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        */
+        padding: 10px;
+      }
+
+      .calculate-button {
+       background-color: green;
+       color: white;
+       border: none;
+       font-size: 15px;
+       padding: 12px 15px;
+       cursor: pointer;
+      }
+
+      .error-color {
+        color: red;
+      }
+
+    </style>
+  </head>
+  <body> 
+    <p>YouTube Subscribe Button</p>
+    <button onclick="
+    subscribe();
+    " class="js-subscribe-button subscribe-button">
+      Subscribe
+    </button>
+
+    <!---clicks, keydowns are known as events
+        onclicks, onkeydown are known as event listeners-->
+
+    <p>Amazon Shipping Calculator</p>
+    <p>Orders under $40 = +$10 shipping.</p>
+    <p>Orders over $40 = FREE shipping.</p>
+    <input placeholder="Cost of order" class="js-cost-input cost-input" onkeydown="
+      handleCostKeydown(event);
+      "> <!--this will display 'typing' when you press on your keyboard-->
+      
+    <button onclick="
+      calculateTotal();
+    " class="calculate-button">Calculate</button>
+    <p class="js-total-cost"></p>
+    
+    
+    <script>
+      String(25)
+      console.log('25' - 5);//Another example of type coercion or automatic type conversion. **NOT RECOMMENDED**
+      console.log('25' + 5);//it will display 255 because it will add it as a regular string
+
+      window.document//This represents the browser
+      window.console.log('window'); //things that are part of the browser
+      window.alert//window has a shortcut that's why we never have to type it out. This is because js adds it for us automatically.
+
+      function handleCostKeydown(event) {
+        if (event.key === 'Enter') { //Event does not happen inside this so we have to put it in the parameter and call it in the button element of the html section.
+          calculateTotal();
+        }
+      }
+
+      function calculateTotal() {
+        const inputElement = document.querySelector('.js-cost-input');
+        let cost = Number(inputElement.value); //this is how we get the text inside a text box('.value'). Use the 'Number()' function to convert it to a number
+        const totalCostElement = document.querySelector('.js-total-cost')
+        //console.log(cost);
+        //console.log(typeof cost); //manually convert it to a number
+        if (cost < 0) {
+        totalCostElement.innerHTML = 'Error: cost cannot be less than $0';
+        totalCostElement.classList.add('error-color');
+        return; //Exit the function to prevent further processing **THIS WAS THE MISSING PIECE A RETURN STATEMENT
+        } 
+        // Remove error class if cost is not negative
+        totalCostElement.classList.remove('error-color');
+
+        if (cost < 40) {
+          cost = cost + 10;//type coercion(when you dont specifiy the object being a string or int)
+
+          console.log(cost);
+        }
+
+        document.querySelector('.js-total-cost') //or totalCostElement works fine here.
+          .innerHTML = `$${cost}`;
+      }
+
+      function subscribe() {
+        const buttonElement = document.querySelector('.js-subscribe-button');
+    
+        if (buttonElement.innerText === 'Subscribe') {
+          buttonElement.innerHTML = 'Subscribed';
+          buttonElement.classList.add('is-subscribed');//.classList itself is an object which has other properties.
+        } else {
+          buttonElement.innerHTML = 'Subscribe';
+          buttonElement.classList.remove('is-subscribed');
+        }
+
+      }  
+     
+    </script>
+  </body>
+</html>
+
+
+

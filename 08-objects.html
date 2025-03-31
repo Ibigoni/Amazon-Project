@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>objects</title>
+  </head>
+  <body> 
+    <script>
+      /*
+      const product = {//This is an object
+        name: 'socks', //This is a property
+        price: 1090
+      };
+      console.log(product);//This is an object
+      console.log(product.name);
+      console.log(product.price);
+
+      product.name = 'cotton socks';
+      console.log(product);
+
+      //Syntax rules for object - start with {}, you can put multiple values (string, int, e.t.c), seperate values with a comma (,). To access the prodcut property we type "." (product.nameoftheproperty)
+
+      product.newProperty = true; //This adds a property to the object
+      console.log(product);
+
+      delete product.newProperty; //This deletes a property
+      console.log(product);
+
+      
+      Objects let us group multiple values together 
+      lets us use multiple values together
+      */
+     
+      const product2 = {
+        name: 'shirt',
+        'delivery-time': '1 day',//You dont have to use the bracket when creating a new property 
+        rating: {//Nested object or an object inside an object
+          stars: 4.5,
+          count: 87
+        },
+        fun: function function1() {// A function is just another type of value. This is also a method. 
+          console.log('function inside object');
+        }
+      }
+      console.log(product2);
+      console.log(product2.name);
+      console.log(product2['name']); //Bracket notation (THis is the same as dot notation)
+      console.log(product2['delivery-time']);//Use bracket notation for variables that have symbols because java might think you're doing something else
+
+      //Use dot notation by default else properties that would not work with dot notation will result to us using bracket notation
+
+      console.log(product2.rating.count);
+      product2.fun();
+      
+      console.log(typeof console.log); 
+      //Built in objects are objects provided by the language
+      //Example: JSON and localStorage
+      //JSON: JavaScript Object Notation. JSON does not support single quote('') so all variable must use "" .
+      // Does not support function(). 
+      // JSON is more universal because we use JSON when send data between computers that might use different programming languages.
+      //Used to store data
+
+      console.log(JSON.stringify(product2));
+
+      const jsonString = JSON.stringify(product2);
+      console.log(JSON.parse(jsonString));
+
+      //localVariable helps store data. It only supports string
+      //To use the local variable, type (localStorage())
+
+      //objects are references and can be referred to. Example:
+      const object1 = {
+        message: 'Hello'
+      }
+      console.log(object1.message);
+
+      const object2 = object1;
+      console.log(object2.message);
+
+      object1.message = 'Good Job!';
+      console.log(object2.message);
+
+      const object3 = {
+        message: 'Good Job!',
+        string: 'you'
+      };
+      //Auto boxing example
+      console.log('Hello'.length);
+      console.log('hello'.toUpperCase());
+
+      console.log(object2 === object3);
+      console.log(object2 === object1);
+
+      //Destructuring an object - Meaning you can assign property of an object to have its own variable or when you want to get the specific property
+      const object4 = {
+        message: 'Good Job!',
+        price: 799
+      };
+
+      //const message = object4.message; //one way to destructure
+      const {message, price} = object4; //Another way to destructure
+      console.log(message);
+      console.log(price);
+      //const {message}
+
+      //The short-hand property
+      const object5 = {
+        //message: message //if the propert and the variable are the same name there is a short cut to type it out
+        message, //short-hand property
+       // method: function function1() {
+       //   console.log('method');
+     //   }
+        method() {
+          console.log('method') //short-hand method syntax
+        }
+      };
+      console.log(object5);
+      object5.method();
+
+      //The short-hand method
+      
+
+      
+
+    </script>
+  </body>
+</html>
+
+
+

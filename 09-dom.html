@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM</title>
+  </head>
+  <body> 
+    <button>hello</button>
+    <button class="js-button">Second button</button><!--This adds an attribute to this button-->
+
+    <script>
+      console.log(document.querySelector('button').innerHTML); //The string tells it which element to get.
+      document.querySelector('button')
+        .innerHTML = 'Changed';
+
+      const buttonElement = document.querySelector('.js-button');//starting with a class selector('.') helps gives you access to the body elements if there are more than one. It is recommended to start the classes name with "js-" to clarify that it is going to be used in javascript
+      console.log(buttonElement);
+
+      /*
+      console.log(document.title);
+      document.title = 'Changed';
+
+      console.log(document.body);
+      console.log(typeof document.body);
+
+      console.log(document.body.innerHTML);
+      document.body.innerHTML = '<button>Good Job!</button>';//You can also creates HTML elements inside of the document.body.innerHTML
+
+     //DOM is another built-in object called 'document object'
+     document.body.innerHTML = 'hello'; //This codes removes everything on the page and replaces with the text 'hello'.
+     document.title = 'Good Job!';
+     //The document object represents/model the webpage. The DOM also has methods we can use.
+     **The DOM combines JavaScript and HTMl together.**
+     The HTML element is converted into a JavaScript object when it's inside javascript
+     method = a function saved inside an object.
+     document.querySelector() - lets us get any element from the page and put it inside our javascript.
+      */
+
+    </script>
+  </body>
+</html>
+
+
+

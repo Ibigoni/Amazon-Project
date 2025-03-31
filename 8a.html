@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Amazon Project</title>
+  </head>
+  <body> 
+    <script>
+      const basket = {
+        product: 'basketball',
+        price: 2095,
+       // 'delivery-time': '3 days'
+      }
+
+      console.log(basket);
+      basket.price += 500;
+      console.log(basket.price); 
+      basket['delivery-time'] = '3 days'
+      console.log(basket['delivery-time']);
+
+      //8d
+    function comparePrice(product1, product2) {
+      prod1 = {
+        name: 'Juice',
+        price: product1
+      };
+
+        prod2 = {
+        name: 'Apple',
+        price: product2
+      }
+
+      if (prod1.price < prod2.price) {
+        return prod1;
+      } else if (prod2.price < prod1.price) {
+        return prod2;
+      }
+    };
+
+    console.log(comparePrice(199,299));
+
+    //8e
+    function isSameProduct(product1, product2) {
+      prod1 = {
+        name: 'Orange',
+        price: product1
+      };
+
+        prod2 = {
+          name: 'Orange',
+          price: product2
+      }
+
+      if (prod1.price === prod2.price && prod1.name === prod2.name) {
+        return true;
+      } else {
+        return false;
+      }
+    };
+
+    console.log(isSameProduct(299,199));
+
+    //8f
+    console.log('HELLO'.toLowerCase());
+
+    //8g
+    console.log('test'.repeat(2));
+     
+    </script>
+  </body>
+</html>
+
+
+

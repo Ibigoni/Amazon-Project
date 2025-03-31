@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lesson 9 G</title>
+  </head>
+  <body> 
+    <button onclick="
+    subscribe();
+    " class="js-subscribe-button">
+      Subscribe
+    </button>
+
+    <!---clicks, keydowns are known as events
+        onclicks, onkeydown are known as event listeners-->
+
+    <p>Amazon Shipping Calculator</p>
+    <p>Orders under $40 = +$10 shipping.</p>
+    <p>Orders over $40 = FREE shipping.</p>
+    <input placeholder="Cost of order" class="js-cost-input" onkeydown="
+      handleCostKeydown(event);
+      "> 
+      
+    <button onclick="
+      calculateTotal();
+    ">Calculate</button>
+    <p class="js-total-cost"></p>
+
+    <input placeholder="Type something" class="js-input" onkeyup="
+    const inputElement = document.querySelector('.js-input');
+    document.querySelector('.js-print')
+    .innerHTML = inputElement.value;
+    ">
+    <p class="js-print"></p>
+    
+    
+   
+    <script>
+
+      window.document
+      window.console.log('window'); 
+      window.alert
+      
+      function handleCostKeydown(event) {
+        if (event.key === 'Enter') { 
+          calculateTotal();
+        }
+      }
+
+      function calculateTotal() {
+        const inputElement = document.querySelector('.js-cost-input');
+        let cost = Number(inputElement.value); 
+        if (cost < 40) {
+          cost = cost + 10;
+          console.log(cost);
+        }
+
+        const formatAnswer = cost.toFixed(2); //.toFixed() method handles decimal places in javascript.
+
+        document.querySelector('.js-total-cost')
+          .innerHTML = `$${formatAnswer}`;
+      }
+
+      function subscribe() {
+        const buttonElement = document.querySelector('.js-subscribe-button');
+    
+        if (buttonElement.innerText === 'Subscribe') {
+          buttonElement.innerHTML = 'Subscribed';
+        } else {
+          buttonElement.innerHTML = 'Subscribe';
+        }
+
+      }  
+   
+
+    </script>
+  </body>
+</html>
+
+
+
